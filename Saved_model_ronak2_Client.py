@@ -44,9 +44,9 @@ def main(_):
         print('please specify server host:port')
         return
 
-    result, label = do_inference(FLAGS.server)
+    result = do_inference(FLAGS.server)
     print('Result is: ', result)
-    print('Actual label is: ', label)
+    #print('Actual label is: ', label)
 
 
 if __name__ == '__main__':
