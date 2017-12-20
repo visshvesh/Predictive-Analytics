@@ -2,7 +2,7 @@ from grpc.beta import implementations
 import numpy
 import tensorflow as tf
 from datetime import datetime
-from tensorflow_serving_client import  predict_pb2
+#from tensorflow_serving_client import  predict_pb2
 from tensorflow_serving.apis import predict_pb2
 from tensorflow_serving.apis import prediction_service_pb2
 
