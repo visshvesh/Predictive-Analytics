@@ -24,7 +24,7 @@ def do_inference(hostport):
 
     # initialize a request
     request = predict_pb2.PredictRequest()
-    request.model_spec.name = 'example_model'
+    request.model_spec.name = 'saved_model'
     request.model_spec.signature_name = 'prediction'
     data = FLAGS.errorcode
 
