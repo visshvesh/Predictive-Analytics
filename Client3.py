@@ -2,7 +2,7 @@ from grpc.beta import implementations
 import numpy
 import tensorflow as tf
 from datetime import datetime
-# from tensorflow_serving_client import  predict_pb2
+#from tensorflow_serving_client import  predict_pb2
 from tensorflow_serving.apis import predict_pb2
 from tensorflow_serving.apis import prediction_service_pb2
 
@@ -28,8 +28,9 @@ def do_inference(hostport):
     request = predict_pb2.PredictRequest()
     request.model_spec.name = 'saved1_model'
     request.model_spec.signature_name = 'prediction'
-    data = FLAGS.errorcode
+    #data = FLAGS.errorcode
     print(data)
+    data = '103'
 
 
 # Randomly generate some test data
