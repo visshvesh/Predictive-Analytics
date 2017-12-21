@@ -29,7 +29,7 @@ def do_inference(hostport):
     request.model_spec.name = 'saved1_model'
     request.model_spec.signature_name = 'prediction'
     #data = FLAGS.errorcode
-    print(data)
+    #print(data)
     data = '103'
 
 
