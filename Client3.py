@@ -7,7 +7,7 @@ from tensorflow_serving.apis import predict_pb2
 from tensorflow_serving.apis import prediction_service_pb2
 
 tf.app.flags.DEFINE_string('server', 'localhost:9000', 'PredictionService host:port')
-tf.app.flags.DEFINE_string('errorcode', '100', 'path to errorcode')
+tf.app.flags.DEFINE_string('errorcode', '110', 'path to errorcode')
 FLAGS = tf.app.flags.FLAGS
 
 
