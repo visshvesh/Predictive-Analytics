@@ -7,7 +7,7 @@ from tensorflow_serving.apis import predict_pb2
 from tensorflow_serving.apis import prediction_service_pb2
 
 tf.app.flags.DEFINE_string('server', 'localhost:9000', 'PredictionService host:port')
-tf.app.flags.DEFINE_string('errorcode', '', 'path to errorcode')
+tf.app.flags.DEFINE_integer('errorcode',150, 'path to errorcode')
 FLAGS = tf.app.flags.FLAGS
 #def do_inference(hostport):
 def do_inference(hostport):
@@ -32,7 +32,7 @@ def do_inference(hostport):
     # temp_data = numpy.random.randn(10, 3).astype(numpy.float32)
     # data, label = temp_data, numpy.sum(temp_data * numpy.array([1, 2, 3]).astype(numpy.float32), 1)
     request.inputs['input'].CopyFrom(
-         tf.contrib.util.make_tensor_proto(data, shape=data.shape))
+         tf.contrib.util.make_tensor_proto(data))
 
     # predict
     result = stub.Predict(request, 10.0)  # 5 seconds
