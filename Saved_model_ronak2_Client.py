@@ -29,10 +29,10 @@ def do_inference(hostport):
     data = FLAGS.errorcode
 
     # Randomly generate some test data
-    temp_data = numpy.random.randn(10, 3).astype(numpy.float32)
-    data, label = temp_data, numpy.sum(temp_data * numpy.array([1, 2, 3]).astype(numpy.float32), 1)
-    request.inputs['input'].CopyFrom(
-        tf.contrib.util.make_tensor_proto(data, shape=data.shape))
+    # temp_data = numpy.random.randn(10, 3).astype(numpy.float32)
+    # data, label = temp_data, numpy.sum(temp_data * numpy.array([1, 2, 3]).astype(numpy.float32), 1)
+    # request.inputs['input'].CopyFrom(
+    #     tf.contrib.util.make_tensor_proto(data, shape=data.shape))
 
 
 
