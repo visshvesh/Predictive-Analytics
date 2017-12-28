@@ -7,7 +7,7 @@ from tensorflow_serving.apis import predict_pb2
 from tensorflow_serving.apis import prediction_service_pb2
 
 tf.app.flags.DEFINE_string('server', 'localhost:9000', 'PredictionService host:port')
-tf.app.flags.DEFINE_string('errorcode', '110', 'path to errorcode')
+tf.app.flags.DEFINE_string('errorcode', '', 'path to errorcode')
 FLAGS = tf.app.flags.FLAGS
 
 
@@ -28,8 +28,8 @@ def do_inference(hostport):
     request = predict_pb2.PredictRequest()
     request.model_spec.name = 'HashTable'
     request.model_spec.signature_name = 'prediction'
-    #data = FLAGS.errorcode
-    data = '156'
+    data = FLAGS.errorcode
+    #data = '156'
     print(data)
 
 
