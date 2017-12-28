@@ -27,7 +27,7 @@ def do_inference(hostport):
     # initialize a request
     request = predict_pb2.PredictRequest()
     request.model_spec.name = 'HashTable'
-    request.model_spec.signature_name = 'predict_Criteria'
+    request.model_spec.signature_name = 'prediction'
     #data = FLAGS.errorcode
     data = '103'
     print(data)
@@ -45,7 +45,7 @@ def do_inference(hostport):
 # # Randomly generate some test data
 # temp_data = numpy.random.randn(10, 3).astype(numpy.float32)
 # data, label = temp_data, numpy.sum(temp_data * numpy.array([1, 2, 3]).astype(numpy.float32), 1)
-    request.inputs['Error_Code'].CopyFrom(
+    request.inputs['input'].CopyFrom(
         tf.contrib.util.make_tensor_proto(data, shape=[1]))
 
     # predict
