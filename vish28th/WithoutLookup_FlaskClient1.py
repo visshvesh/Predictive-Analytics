@@ -51,7 +51,19 @@ def inference():
     print (ec)
     #input_data = np.expand_dims(np.array(request_data), 0)
     result  = run.inference(ec)
-    return jsonify({'label': result[0].tolist()})
+    print (result)
+    return jsonify({'result': result})
+
+
+@app.route('/inferenceA', methods=['POST'])
+def inference():
+    request_data = request.get_json()
+    ec = request_data["errorcode"]
+    print (ec)
+    #input_data = np.expand_dims(np.array(request_data), 0)
+    result  = run.inference(ec)
+    print(result)
+    return result
 
 
 @app.route('/test', methods=['GET'])
