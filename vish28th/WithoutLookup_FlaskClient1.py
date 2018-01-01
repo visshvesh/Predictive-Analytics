@@ -56,7 +56,7 @@ def inference():
 
 
 @app.route('/inferenceA', methods=['POST'])
-def inference():
+def inferenceA():
     request_data = request.get_json()
     ec = request_data["errorcode"]
     print (ec)
