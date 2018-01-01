@@ -64,7 +64,7 @@ def inference():
     print(result)
     print (result.outputs)
     re=json.dumps(result)
-    return jsonify({'result': result[outputs][value][string_val]})
+    return jsonify({'result': result})
 
 
 @app.route('/inferenceA', methods=['POST'])
