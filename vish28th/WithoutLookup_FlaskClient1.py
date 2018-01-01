@@ -36,6 +36,15 @@ class mainSessRunning():
             tf.contrib.util.make_tensor_proto(data, shape=[1]))
         result = self.stub.Predict(self.request, 30.0)
         return result
+      def inferenceA(self, val_x):
+        # temp_data = numpy.random.randn(100, 3).astype(numpy.float32)
+        #temp_data = val_x.astype(np.float32).reshape(-1, 3)
+        data = val_x
+        # data, label = temp_data, np.sum(temp_data * np.array([1, 2, 3]).astype(np.float32), 1)
+        self.request.inputs['input'].CopyFrom(
+            tf.contrib.util.make_tensor_proto(data, shape=[1]))
+        result = self.stub.Predict(self.request, 30.0)
+        return result
 
 
 run = mainSessRunning()
@@ -52,7 +61,8 @@ def inference():
     #input_data = np.expand_dims(np.array(request_data), 0)
     result  = run.inference(ec)
     print (result)
-    return jsonify({'result': result})
+    re=json.dumps(result)
+    return jsonify({'result': re})
 
 
 @app.route('/inferenceA', methods=['POST'])
