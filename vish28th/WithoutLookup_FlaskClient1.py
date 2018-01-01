@@ -61,7 +61,7 @@ def inference():
     print (ec)
     #input_data = np.expand_dims(np.array(request_data), 0)
     result  = run.inference(ec)
-    print (result[outputs][value][string_val]})
+    print (result[outputs][value][string_val])
     re=json.dumps(result)
     return jsonify({'result': result[outputs][value][string_val]})
 
