@@ -46,9 +46,11 @@ print("Initialization done. ")
 # Define a route for the default URL, which loads the form
 @app.route('/inference', methods=['POST'])
 def inference():
-    request_data = request.json
+    request_data = request.get_json()
+    ec = request_data["errorcode"]
+    print (ec)
     #input_data = np.expand_dims(np.array(request_data), 0)
-    result  = run.inference(request_data)
+    result  = run.inference(ec)
     return jsonify({'label': result[0].tolist()})
 
 
