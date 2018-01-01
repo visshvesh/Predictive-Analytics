@@ -17,6 +17,7 @@ FLAGS = tf.app.flags.FLAGS
 app = Flask(__name__)
 
 
+
 class mainSessRunning():
     def __init__(self):
         host, port = FLAGS.server.split(':')
@@ -36,7 +37,8 @@ class mainSessRunning():
             tf.contrib.util.make_tensor_proto(data, shape=[1]))
         result = self.stub.Predict(self.request, 30.0)
         return result
-      def inferenceA(self, val_x):
+    
+    def inferenceA(self, val_x):
         # temp_data = numpy.random.randn(100, 3).astype(numpy.float32)
         #temp_data = val_x.astype(np.float32).reshape(-1, 3)
         data = val_x
@@ -45,7 +47,6 @@ class mainSessRunning():
             tf.contrib.util.make_tensor_proto(data, shape=[1]))
         result = self.stub.Predict(self.request, 30.0)
         return result
-
 
 run = mainSessRunning()
 
