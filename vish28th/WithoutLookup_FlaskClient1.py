@@ -63,7 +63,7 @@ def inference():
     result  = run.inference(ec)
     print(result)
     print("***************")
-    print (result.outputs)
+    print (result.outputs['output'])
     print("***************")
     #re=json.dumps(result)
     return jsonify({'result': 'ok'})
