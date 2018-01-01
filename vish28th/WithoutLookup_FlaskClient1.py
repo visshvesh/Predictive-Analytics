@@ -63,11 +63,11 @@ def inference():
     result  = run.inference(ec)
     print(result)
     print("***************")
-    print (result.outputs['output'].string_val)
+    print (result.outputs['output'].string_val[0])
     #print (result.outputs['output']['string_val'])
     print("***************")
     #re=json.dumps(result)
-    return jsonify({'result': 'ok'})
+    return jsonify({'result': result.outputs['output'].string_val[0]})
 
 
 @app.route('/inferenceA', methods=['POST'])
